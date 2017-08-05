@@ -7,12 +7,13 @@
         <h1>Ling's blog</h1>
       </div>
 
+{% for post in posts %}
       <div>
-        <p>Published 5 August 2017</p>
-        <h3><a href="">My first post</a></h3>
-        <p>This is the first page. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-        veneatis vestibulum.</p>
+          <p>published: {{ post.published_date }}</p>
+          <h2><a href="">{{ post.title }}</a></h2>
+          <p>{{ post.text|linebreaksbr }}</p>
       </div>
+{% endfor %}
 
       <div>
         <p>Published 5 August 2017</p>
