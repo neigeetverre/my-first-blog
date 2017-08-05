@@ -1,25 +1,13 @@
-<html>
-    <head>
-      <title>Ling's blog</title>
-    </head>
-    <body>
-      <div>
-        <h1>Ling's blog</h1>
-      </div>
-
-{% for post in posts %}
-      <div>
-          <p>published: {{ post.published_date }}</p>
-          <h2><a href="">{{ post.title }}</a></h2>
-          <p>{{ post.text|linebreaksbr }}</p>
-      </div>
-{% endfor %}
-
-      <div>
-        <p>Published 5 August 2017</p>
-        <h3><a href="">My second post</a></h3>
-        <p>This is the first page. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-        veneatis vestibulum.</p>
-      </div>
-    </body>
-</html>
+    {% extends 'blog/base.html' %}
+    
+        {% block content %}
+                  {% for post in posts %}
+                      <div class="post">
+                          <div class="date">
+                              <p>published: {{ post.published_date }}</p>
+                          </div>
+                          <h1><a href="">{{ post.title }}</a></h1>
+                          <p>{{ post.text|linebreaksbr }}</p>
+                      </div>
+                  {% endfor %}
+        {% endblock %}
